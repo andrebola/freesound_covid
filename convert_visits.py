@@ -1,0 +1,28 @@
+import json
+from datetime import datetime
+
+
+first_day = datetime(2020, 1, 1, 0, 0)
+countries_map = {'Afghanistan': 'AFG', 'Albania': 'ALB', 'Algeria': 'DZA', 'Andorra': 'AND', 'Angola': 'AGO', 'Anguilla': 'AIA', 'Argentina': 'ARG', 'Armenia': 'ARM', 'Aruba': 'ABW', 'Austria': 'AUT', 'Azerbaijan': 'AZE', 'Bahrain': 'BHR', 'Bangladesh': 'BGD', 'Barbados': 'BRB', 'Belarus': 'BLR', 'Belgium': 'BEL', 'Belize': 'BLZ', 'Benin': 'BEN', 'Bermuda': 'BMU', 'Bhutan': 'BTN', 'Botswana': 'BWA', 'Brazil': 'BRA', 'Bulgaria': 'BGR', 'Burundi': 'BDI', 'Cambodia': 'KHM', 'Cameroon': 'CMR', 'Canada': 'CAN', 'Chad': 'TCD', 'Chile': 'CHL', 'China': 'CHN', 'Colombia': 'COL', 'Croatia': 'HRV', 'Cuba': 'CUB', 'Cyprus': 'CYP', 'Denmark': 'DNK', 'Djibouti': 'DJI', 'Dominica': 'DMA', 'Ecuador': 'ECU', 'Egypt': 'EGY', 'Eritrea': 'ERI', 'Estonia': 'EST', 'Ethiopia': 'ETH', 'Fiji': 'FJI', 'Finland': 'FIN', 'Gabon': 'GAB', 'Germany': 'DEU', 'Ghana': 'GHA', 'Gibraltar': 'GIB', 'Greece': 'GRC', 'Greenland': 'GRL', 'Grenada': 'GRD', 'Guadeloupe': 'GLP', 'Guam': 'GUM', 'Guatemala': 'GTM', 'Guinea': 'GIN', 'Guyana': 'GUY', 'Haiti': 'HTI', 'Honduras': 'HND', 'Hungary': 'HUN', 'Iceland': 'ISL', 'India': 'IND', 'Indonesia': 'IDN', 'Iraq': 'IRQ', 'Israel': 'ISR', 'Italy': 'ITA', 'Jamaica': 'JAM', 'Japan': 'JPN', 'Jersey': 'JEY', 'Jordan': 'JOR', 'Kazakhstan': 'KAZ', 'Kenya': 'KEN', 'Kiribati': 'KIR', 'Kuwait': 'KWT', 'Kyrgyzstan': 'KGZ', 'Latvia': 'LVA', 'Lebanon': 'LBN', 'Lesotho': 'LSO', 'Liberia': 'LBR', 'Libya': 'LBY', 'Liechtenstein': 'LIE', 'Lithuania': 'LTU', 'Luxembourg': 'LUX', 'Madagascar': 'MDG', 'Malawi': 'MWI', 'Malaysia': 'MYS', 'Maldives': 'MDV', 'Mali': 'MLI', 'Malta': 'MLT', 'Martinique': 'MTQ', 'Mauritania': 'MRT', 'Mauritius': 'MUS', 'Mayotte': 'MYT', 'Mexico': 'MEX', 'Monaco': 'MCO', 'Mongolia': 'MNG', 'Montenegro': 'MNE', 'Montserrat': 'MSR', 'Morocco': 'MAR', 'Mozambique': 'MOZ', 'Namibia': 'NAM', 'Nauru': 'NRU', 'Nepal': 'NPL', 'Nicaragua': 'NIC', 'Nigeria': 'NGA', 'Norway': 'NOR', 'Oman': 'OMN', 'Pakistan': 'PAK', 'Palau': 'PLW', 'Panama': 'PAN', 'Paraguay': 'PRY', 'Peru': 'PER', 'Poland': 'POL', 'Portugal': 'PRT', 'Qatar': 'QAT', 'Romania': 'ROU', 'Rwanda': 'RWA', 'Samoa': 'WSM', 'San Marino': 'SMR', 'Saudi Arabia': 'SAU', 'Senegal': 'SEN', 'Serbia': 'SRB', 'Seychelles': 'SYC', 'Singapore': 'SGP', 'Slovakia': 'SVK', 'Slovenia': 'SVN', 'Somalia': 'SOM', 'South Africa': 'ZAF', 'Spain': 'ESP', 'Suriname': 'SUR', 'Sweden': 'SWE', 'Switzerland': 'CHE', 'Tajikistan': 'TJK', 'Thailand': 'THA', 'Togo': 'TGO', 'Tonga': 'TON', 'Tunisia': 'TUN', 'Turkey': 'TUR', 'Turkmenistan': 'TKM', 'Tuvalu': 'TUV', 'Uganda': 'UGA', 'Ukraine': 'UKR', 'Uruguay': 'URY', 'Uzbekistan': 'UZB', 'Vanuatu': 'VUT', 'Yemen': 'YEM', 'Zambia': 'ZMB', 'Zimbabwe': 'ZWE', 'Åland Islands': 'ALA', 'American Samoa': 'ASM', 'Antigua & Barbuda': 'ATG', 'Australia': 'AUS', 'Bahamas': 'BHS', 'Bolivia': 'BOL', 'Bosnia & Herzegovina': 'BIH', 'British Indian Ocean Territory': 'IOT', 'British Virgin Islands': 'VGB', 'Brunei': 'BRN', 'Burkina Faso': 'BFA', 'Cape Verde': 'CPV', 'Caribbean Netherlands': 'BES', 'Cayman Islands': 'CYM', 'Central African Republic': 'CAF', 'Comoros': 'COM', 'Congo - Kinshasa': 'COD', 'Congo - Brazzaville': 'COG', 'Cook Islands': 'COK', 'Costa Rica': 'CRI', 'Curaçao': 'CUW', 'Czechia': 'CZE', 'Côte d’Ivoire': 'CIV', 'Dominican Republic': 'DOM', 'El Salvador': 'SLV', 'Equatorial Guinea': 'GNQ', 'Eswatini': 'SWZ', 'Falkland Islands (Islas Malvinas)': 'FLK', 'Faroe Islands': 'FRO', 'France': 'FRA', 'French Guiana': 'GUF', 'French Polynesia': 'PYF', 'Gambia': 'GMB', 'Georgia': 'GEO', 'Guernsey': 'GGY', 'Guinea-Bissau': 'GNB', 'Hong Kong': 'HKG', 'Iran': 'IRN', 'Ireland': 'IRL', 'Isle of Man': 'IMN', 'Kosovo': 'RKS', 'Laos': 'LAO', 'Macao': 'MAC', 'Marshall Islands': 'MHL', 'Micronesia': 'FSM', 'Moldova': 'MDA', 'Myanmar (Burma)': 'MMR', 'Netherlands': 'NLD', 'New Caledonia': 'NCL', 'New Zealand': 'NZL', 'Niger': 'NER', 'North Korea': 'PRK', 'North Macedonia': 'MKD', 'Northern Mariana Islands': 'MNP', 'Palestine': 'PSE', 'Papua New Guinea': 'PNG', 'Philippines': 'PHL', 'Puerto Rico': 'PRI', 'Russia': 'RUS', 'Réunion': 'REU', 'Sierra Leone': 'SLE', 'Sint Maarten': 'SXM', 'Solomon Islands': 'SLB', 'South Korea': 'KOR', 'South Sudan': 'SSD', 'Sri Lanka': 'LKA', 'St. Barthélemy': 'BLM', 'St. Helena': 'SHN', 'St. Kitts & Nevis': 'KNA', 'St. Lucia': 'LCA', 'St. Martin': 'MAF', 'St. Pierre & Miquelon': 'SPM', 'St. Vincent & Grenadines': 'VCT', 'Sudan': 'SDN', 'Svalbard & Jan Mayen': 'SJM', 'Syria': 'SYR', 'São Tomé & Príncipe': 'STP', 'Taiwan': 'TWN', 'Tanzania': 'TZA', 'Timor-Leste': 'TLS', 'Trinidad & Tobago': 'TTO', 'Turks & Caicos Islands': 'TCA', 'U.S. Virgin Islands': 'VIR', 'United Arab Emirates': 'ARE', 'United Kingdom': 'GBR', 'United States': 'USA', 'Venezuela': 'VEN', 'Vietnam': 'VNM', 'Western Sahara': 'ESH'}
+
+
+def convert_visits(visits_file):
+    data =json.load(open(visits_file))
+    countries = list(set([item['dimensions'][1] for item in data['data']['rows']]))
+    ret_data = {}
+    for item in data['data']['rows']:
+        if item['dimensions'][1] in countries_map:
+            country = countries_map[item['dimensions'][1]]
+            date_str = item['dimensions'][0]
+            date_time_obj = datetime.strptime(date_str, '%Y%m%d')
+            views_day = item['metrics'][0]['values'][0] # users per day
+            if country not in ret_data:
+                ret_data[country] = [0]*((datetime.now()-first_day).days)
+
+            ret_data[country][(date_time_obj-first_day).days] = int(float(views_day))
+    return ret_data
+
+
+if __name__ == "__main__":
+    visits_data = convert_visits('data/freesound_visitors_per_day_per_country_20200101_20200709.json')
+    print (visits_data['URY'])
